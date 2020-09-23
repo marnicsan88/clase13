@@ -10,9 +10,9 @@ const ItemDetail = (props) => {
     }
 
     return(
-        <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around", marginTop:"3vh"}}>
-            <img src={props.item.image} style={{width:"300px"}}/>
-            <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+        <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center", marginTop:"3vh"}}>
+            <img src={props.item.image} style={{width:"20rem",minHeight:"100%",margin:"0.5rem"}}/>
+            <div style={{display:"flex",flexDirection:"column",alignItems:"center",margin:"0.5rem"}}>
                 <h1>{props.item.nombre}</h1>
                 <div>{props.item.efecto}</div>
                 <div style={{fontWeight:"bold"}}>{props.item.valor}</div>
