@@ -5,8 +5,8 @@ const Loading = () => {
     return(
         <div>
             <h1>CARGANDO...</h1>
-            <div class="loadingio-spinner-ripple-wds2kxijsd8">
-                <div class="ldio-14z9oruy10q">
+            <div className="loadingio-spinner-ripple-wds2kxijsd8">
+                <div className="ldio-14z9oruy10q">
                     <div></div>
                     <div></div>
                 </div>

@@ -1,6 +1,4 @@
 import React from 'react';
-import Counter from '../components/CounterClass';
-import Counter2 from '../components/CounterFunction';
 import ItemList from '../components/ItemList';
 
 const Home = (props) => {

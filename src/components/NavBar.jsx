@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,
-  UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavbarText } from 'reactstrap';
+import { Navbar, NavbarBrand} from 'reactstrap';
+import { NavLink} from 'react-router-dom';
 import logo from '../resources/logo.png';
 import loguito from '../resources/loguito.png';
 import Searchbox from './SearchBox'
@@ -26,10 +26,9 @@ const NavPpal = (props) => {
         </NavbarBrand>
         <Searchbox categorias={props.categorias} />
         <div style={{display:displayFlex, justifyContent:"center"}}>
-          <NavLink href="/" className="text-white icon-link px-1 px-sm-3 px-md-4"><CartIcon/></NavLink>
-          <NavLink href="/" className="text-white icon-link px-1 px-sm-3 px-md-4">{usuario}</NavLink>
+          <NavLink to="/cart" className="text-white icon-link px-1 px-sm-3 px-md-4"><CartIcon/></NavLink>
+          <NavLink to="/" className="text-white icon-link px-1 px-sm-3 px-md-4">{usuario}</NavLink>
         </div>
-        
       </Navbar>
   );
 }

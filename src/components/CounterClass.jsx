@@ -3,7 +3,7 @@ import {InputGroup} from 'reactstrap'
 import CounterButton from './CounterButton';
 import CounterInput from './CounterInput';
 
-export class Counter extends React.Component{
+class Counter extends React.Component{
     constructor(){
         super();
         this.state = {
