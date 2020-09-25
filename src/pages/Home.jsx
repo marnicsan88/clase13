@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemList from '../components/ItemList';
+import ItemListContainer from '../components/ItemListContainer';
 
 const Home = (props) => {
     return (
@@ -8,7 +8,7 @@ const Home = (props) => {
                 {props.greeting} <label style={{fontWeight:"bolder"}}>{props.nombre}</label>
             </div>
             <div>
-                <ItemList />
+                <ItemListContainer />
             </div>
         </div>
     );
