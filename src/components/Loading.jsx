@@ -3,7 +3,7 @@ import './css/loading.css';
 
 const Loading = () => {
     return(
-        <div>
+        <div style={{textAlign:"center"}}>
             <h1>CARGANDO...</h1>
             <div className="loadingio-spinner-ripple-wds2kxijsd8">
                 <div className="ldio-14z9oruy10q">

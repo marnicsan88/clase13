@@ -21,11 +21,7 @@ function ItemListContainer(){
     },[])
 
     return(
-        <Container fluid={true}>
-            <Row xs="1" sm="2" md="3" lg="4" className="justify-content-md-center" style={{textAlign:"center"}}>
-                {loading?<Loading />:<ItemList data={items}/>}
-            </Row>
-        </Container>
+        loading?<Loading/>:<ItemList data={items}/>
     )
 }
 

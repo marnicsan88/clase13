@@ -1,5 +1,5 @@
 import React from 'react';
-import CounterFinal from './CounterFinal';
+import CounterFinal from './contador/CounterFinal';
 
 const ItemDetail = (props) => {
     const onAdd = (count) => {

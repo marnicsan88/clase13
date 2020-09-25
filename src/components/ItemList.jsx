@@ -1,15 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import {Col} from 'reactstrap';
+import {Container,Row,Col} from 'reactstrap';
 import Item from './Item';
 
-export default function ItemList(props){
+export default function ItemList({data}){
   return(
-    <div>
-      {props.data.map(item =>
-          {let res = <Col key={item.id}><Item id={item.id} nombre={item.nombre} precio={item.valor} image={item.image}/></Col>;
-          return res;}
-
-      )}
-    </div>
+    <Container fluid={true}>
+      <Row xs="1" sm="2" md="3" lg="4" className="justify-content-md-center" style={{textAlign:"center"}}>
+        {data.map(item =><Col key={item.id}><Item id={item.id} nombre={item.nombre} precio={item.valor} image={item.image}/></Col>)}
+      </Row>
+    </Container>
   )
 }
