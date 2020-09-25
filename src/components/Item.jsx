@@ -10,8 +10,8 @@ const Item = (props) => {
           <CardTitle className="font-weight-bolde">{props.nombre}</CardTitle>
           <CardText className="text-right font-weight-bolder">{props.precio}</CardText>
         </CardBody>
-        <Button color="info">
-          <NavLink to={`/item/${props.id}`} style={{color:"#fff",display:"block"}}>Ver Detalle</NavLink>
+        <Button color="info" style={{padding:"0"}}>
+          <NavLink to={`/item/${props.id}`} style={{color:"#fff",display:"block",padding:".375rem .75rem"}}>Ver Detalle</NavLink>
         </Button>
       </Card>
     );
