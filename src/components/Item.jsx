@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Item = (props) => {
     return (
-      <Card style={{margin:"0.5rem"}} id={props.id}>
+      <Card style={{margin:"0.5rem",height:"15rem"}} id={props.id}>
         <CardBody>
           <CardImg top style={{maxWidth:"20rem",maxHeight:"6rem"}} src={props.image} alt="Card image cap" />
           <CardTitle className="font-weight-bolde">{props.nombre}</CardTitle>

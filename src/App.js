@@ -1,13 +1,13 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
-import NavPpal from './components/NavBar';
+import NavPpal from './components/navBar/NavBar';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import ItemDetailContainer from './pages/ItemDetailContainer';
 
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <div>
       <BrowserRouter>
@@ -27,5 +27,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

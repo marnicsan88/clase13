@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar, NavbarBrand} from 'reactstrap';
 import { NavLink} from 'react-router-dom';
-import logo from '../resources/logo.png';
-import loguito from '../resources/loguito.png';
 import Searchbox from './SearchBox'
 import CartIcon from './CartIcon'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

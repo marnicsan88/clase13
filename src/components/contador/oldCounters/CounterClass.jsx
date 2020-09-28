@@ -1,6 +1,6 @@
 import React from 'react';
 import {InputGroup} from 'reactstrap'
-import CounterButton from './CounterButton';
+import CounterButton from '../CounterButton';
 import CounterInput from './CounterInput';
 
 class Counter extends React.Component{

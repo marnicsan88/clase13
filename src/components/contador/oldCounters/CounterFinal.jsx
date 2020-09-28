@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {InputGroup,Button} from 'reactstrap'
-import CounterButton from './CounterButton';
+import CounterButton from '../CounterButton';
 import CounterInput from './CounterInput';
 
 const CounterFinal = (props) =>{
