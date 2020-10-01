@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, Button} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-
 import './css/item.css'
 
 const Item = (props) => {
