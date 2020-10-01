@@ -1,5 +1,5 @@
-import React, {useState,useEffect,useContext} from 'react';
-import { Navbar, NavbarBrand} from 'reactstrap';
+import React, {useState,useEffect} from 'react';
+import { Navbar} from 'reactstrap';
 import { NavLink} from 'react-router-dom';
 import Searchbox from './SearchBox'
 import CartIcon from './CartIcon'
@@ -7,10 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 import './css/navBarStyles.css';
-import Cart from '../../pages/Cart';
 
-const NavPpal = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+const NavPpal = () => {
   const [categories,setCategories] = useState([]);
   
   useEffect(() => {
@@ -21,8 +19,6 @@ const NavPpal = (props) => {
       setCategories(res);
     })
 },[categories])
-
-  const toggle = () => setIsOpen(!isOpen);
 
   const usuario = <FontAwesomeIcon icon={faUserCircle} />
   const displayFlex = "flex";

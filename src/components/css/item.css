@@ -5,6 +5,7 @@
     color: #fff;
     border-left: #38ef7d;
     border-right: #11998e;
+    border-bottom: #17a2b8;
 }
 
 .Encantamiento{
@@ -14,6 +15,7 @@
     color: #fff;
     border-left: #0083B0;
     border-right: #00B4DB;
+    border-bottom: #17a2b8;
 }
 
 .Maldicion{
@@ -23,6 +25,7 @@
     color: #fff;
     border-left: #414345;
     border-right: #232526;
+    border-bottom: #17a2b8;
 }
 
 .Maleficio{
@@ -32,6 +35,7 @@
     color: #fff;
     border-left: #93291E;
     border-right: #ED213A;
+    border-bottom: #17a2b8;
 }
 
 .Conjuro{

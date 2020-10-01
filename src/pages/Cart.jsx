@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
+import CartDetail from "../components/CartDetail"
 import {CartContext} from "../context/context"
 
 export default function Cart(){
-    const [cart,setCart] = useContext(CartContext);
+    const {cart} = useContext(CartContext);
     return(
         <div style={{textAlign:"center"}}>
-            <h1>EL CARRITO</h1>
-            {cart.map(cartItem => <div><div>{cartItem.item.nombre}</div><div>{cartItem.cantidad}</div></div>)}
+            {!cart.length?<h1 style={{marginTop:"3rem",fontWeight:"bolder"}}>El Carrito está vacío</h1>:<CartDetail />}
         </div>
     )
 }

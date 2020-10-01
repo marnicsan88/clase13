@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const CartIcon = () => {
-  const [cart,setCart] = useContext(CartContext);
+  const {cart, getTotalCarrito} = useContext(CartContext);
   return (
-    cart.length?<span className="badge badge-light"><FontAwesomeIcon icon={faShoppingCart} />&nbsp;{cart.length}</span>:<FontAwesomeIcon icon={faShoppingCart} />
+    cart.length?<span className="badge badge-light"><FontAwesomeIcon icon={faShoppingCart} />&nbsp;{getTotalCarrito()}</span>:<FontAwesomeIcon icon={faShoppingCart} />
   );
 }
 

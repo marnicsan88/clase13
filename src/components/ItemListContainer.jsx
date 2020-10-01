@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Loading from './loading/Loading';
 import ItemList from './ItemList';
-import httpClient from '../constants/httpClient';
 
 function ItemListContainer(){
     const [items,setItems] = useState([]);

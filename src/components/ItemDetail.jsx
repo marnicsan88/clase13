@@ -3,12 +3,13 @@ import ItemCount from './contador/ItemCount';
 import {CartContext} from '../context/context';
 import {Button} from 'reactstrap';
 import params from '../constants/counterParam';
+import { NavLink } from 'react-router-dom';
 
 const ItemDetail = (props) => {
     const [cantidad,setCantidad] = useState(0)
     const [cantText,setCantText] = useState("Agregar al Carrito")
 
-    const [cart,setCart] = useContext(CartContext);
+    const {setCart} = useContext(CartContext);
 
     useEffect(() => {
         cantidad?setCantText(`Comprar ${cantidad}`):setCantText("Agregar al Carrito")
@@ -28,11 +29,13 @@ const ItemDetail = (props) => {
             <div style={{display:"flex",flexDirection:"column",justifyContent:"space-between",margin:"0.5rem",width:"20rem"}}>
                 <h1>{props.item.nombre}</h1>
                 <div>{props.item.efecto}</div>
-                <div style={{fontWeight:"bold"}}>{props.item.valor}</div>
+                <div style={{fontWeight:"bold"}}>${props.item.valor}</div>
                 <ItemCount initial={params.initial} min={params.min} max={params.max} onAdd={onAdd} />
-                <Button onClick={agregarCarrito} color="primary" className="text-center" style={{width:"100%", margin:"1px"}}>
-                    {cantText}
-                </Button>
+                <NavLink to="/">
+                    <Button onClick={agregarCarrito} color="primary" className="text-center" style={{width:"100%", margin:"1px"}}>
+                        {cantText}
+                    </Button>
+                </NavLink>
             </div>        
         </div>
     )
