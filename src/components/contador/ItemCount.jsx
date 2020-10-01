@@ -26,7 +26,7 @@ const ItemCount = ({initial, max, min, onAdd}) =>{
     const handleChange = (evt) => {
         const valor = evt.target.value
         const checkJustNumbers = /([0-9])$/g;
-        checkJustNumbers.exec(valor)?updateContador(parseInt(valor)):evt.preventDefault();
+        checkJustNumbers.test(valor)?updateContador(parseInt(valor)):evt.preventDefault();
     }
 
     return(

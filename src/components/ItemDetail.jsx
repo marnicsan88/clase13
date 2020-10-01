@@ -1,12 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState,useContext} from 'react';
 import ItemCount from './contador/ItemCount';
+import {CartContext} from '../context/context';
 import {Button} from 'reactstrap';
 import params from '../constants/counterParam';
 
 const ItemDetail = (props) => {
-    
     const [cantidad,setCantidad] = useState(0)
     const [cantText,setCantText] = useState("Agregar al Carrito")
+
+    const [cart,setCart] = useContext(CartContext);
 
     useEffect(() => {
         cantidad?setCantText(`Comprar ${cantidad}`):setCantText("Agregar al Carrito")
@@ -17,16 +19,13 @@ const ItemDetail = (props) => {
     }
 
     const agregarCarrito = () => {
-        if(cantidad > 0)
-          alert(`SE AGREGARAN ${cantidad} ${props.item.nombre}`);
-        else
-          alert("NO HAY NADA PARA AGREGAR");
+        setCart(carrito => [...carrito,{item:props.item,cantidad:cantidad}])
     }
 
     return(
         <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center", marginTop:"3vh", maxHeight:"15rem"}}>
             <img src={props.item.image} alt={`Imagen de ${props.item.nombre}`} style={{width:"15rem",maxHeight:"100%",margin:"0.5rem"}}/>
-            <div style={{display:"flex",flexDirection:"column",justifyContent:"space-between",margin:"0.5rem"}}>
+            <div style={{display:"flex",flexDirection:"column",justifyContent:"space-between",margin:"0.5rem",width:"20rem"}}>
                 <h1>{props.item.nombre}</h1>
                 <div>{props.item.efecto}</div>
                 <div style={{fontWeight:"bold"}}>{props.item.valor}</div>

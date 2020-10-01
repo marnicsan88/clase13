@@ -7,7 +7,9 @@ import {useParams} from 'react-router-dom';
 const ItemDetailContainer = () => {
     const [item,setItem] = useState([]);
     const [loading,setLoading] = useState(true);
+
     const {idItem} = useParams();
+
     useEffect(() => {
         fetch(`https://5f6a9065d808b90016bc1301.mockapi.io/spellmarketapi/v1/spell/${idItem}`)
         .then(res => {
@@ -20,8 +22,8 @@ const ItemDetailContainer = () => {
 
     return(
         <Container fluid>
-            <Row className="justify-content-md-center" style={{textAlign:"center"}}>
-                <Col>
+            <Row style={{textAlign:"center"}}>
+                <Col style={{display:"flex",justifyContent:"center"}}>
                     {loading?<Loading />:<ItemDetail item={item}/>}
                 </Col>
             </Row>
