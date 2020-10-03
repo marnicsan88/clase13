@@ -7,14 +7,13 @@ import { NavLink } from 'react-router-dom';
 
 const ItemDetail = (props) => {
     const [cantidad,setCantidad] = useState(0)
-    const [cantText,setCantText] = useState("Agregar al Carrito")
-
+    const [sePuedeComprar,setSePuedeComprar] = useState(false)
     const {setCart} = useContext(CartContext);
-
-    useEffect(() => {
-        cantidad?setCantText(`Comprar ${cantidad}`):setCantText("Agregar al Carrito")
-    },[cantidad])
     
+    useEffect(() =>{
+        (cantidad >= params.min && cantidad <= params.max) ? setSePuedeComprar(true) : setSePuedeComprar(false)
+    },[cantidad])
+
     const onAdd = (count) => {
         setCantidad(count);
     }
@@ -32,8 +31,8 @@ const ItemDetail = (props) => {
                 <div style={{fontWeight:"bold"}}>${props.item.valor}</div>
                 <ItemCount initial={params.initial} min={params.min} max={params.max} onAdd={onAdd} />
                 <NavLink to="/">
-                    <Button onClick={agregarCarrito} color="primary" className="text-center" style={{width:"100%", margin:"1px"}}>
-                        {cantText}
+                    <Button onClick={agregarCarrito} color="primary" disabled={!sePuedeComprar} className="text-center" style={{width:"100%", margin:"1px"}}>
+                        Comprar {cantidad}
                     </Button>
                 </NavLink>
             </div>        

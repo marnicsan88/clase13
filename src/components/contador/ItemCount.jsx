@@ -10,15 +10,13 @@ const ItemCount = ({initial, max, min, onAdd}) =>{
     },[contador]);
     
     const sumar = () => {
-        let cont = contador;
-        if(cont < max){
+        if(contador < max){
             updateContador((cont) => cont + 1);
         }
     }
 
     const restar = () => {
-        let cont = contador;
-        if(cont > min){
+        if(contador > min){
             updateContador((cont) => cont - 1)
         }
     }
@@ -32,9 +30,9 @@ const ItemCount = ({initial, max, min, onAdd}) =>{
     return(
         <div style={{marginTop:"2px",marginBottom:"2px"}}>
             <InputGroup style={{margin:"1px"}}>
-                <CounterButton inputAddOnType="prepend" colorButton="danger" accion={restar} disabled={contador === min} text="-" />
+                <CounterButton inputAddOnType="prepend" colorButton="danger" accion={restar} disabled={contador <= min} text="-" />
                 <Input value={contador} onChange={handleChange} style={{width:"50%",textAlign:"center"}}/>
-                <CounterButton inputAddOnType="append" colorButton="success" accion={sumar} text="+" disabled={contador === max} />
+                <CounterButton inputAddOnType="append" colorButton="success" accion={sumar} text="+" disabled={contador >= max} />
             </InputGroup>
         </div>
     )

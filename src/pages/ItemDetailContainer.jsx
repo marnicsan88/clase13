@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import Loading from '../components/loading/Loading';
 import ItemDetail from '../components/ItemDetail';
+import ErrorMsg from '../components/ErrorMsg';
 import {Container, Row, Col} from 'reactstrap';
 import {useParams} from 'react-router-dom';
 
@@ -17,10 +18,13 @@ const ItemDetailContainer = () => {
         }).then(res => {
             setItem(res);
             setLoading(false)
+        }).catch(err =>{
+            console.log("ERROR " + err);
         })
     },[idItem])
 
     return(
+        item === undefined?<ErrorMsg msg="No se encontró Spell"/>:
         <Container fluid>
             <Row style={{textAlign:"center"}}>
                 <Col style={{display:"flex",justifyContent:"center"}}>
