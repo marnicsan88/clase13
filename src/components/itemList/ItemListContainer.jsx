@@ -8,7 +8,7 @@ function ItemListContainer(){
     const [items,setItems] = useState([]);
     const [loading,isLoading] = useState(true);
 
-    /*CONSUMIENDO API CON FETCH*/
+    /*CONSUMIENDO API CON FETCH
     useEffect(() => {
         fetch('https://5f6a9065d808b90016bc1301.mockapi.io/spellmarketapi/v1/spell/')
         .then(res => {
@@ -17,9 +17,9 @@ function ItemListContainer(){
             setItems(res);
             isLoading(false)
         })
-    },[])
+    },[])*/
 
-    /*CONSUMIENDO FIREBASE
+    /*CONSUMIENDO FIREBASE*/
     useEffect(() => {
         const db = getFirestore();
         const itemCollection = db.collection("spells")
@@ -27,13 +27,15 @@ function ItemListContainer(){
             if(!querySnapshot.size){
                 console.log("No Data");
             }
-            setItems(querySnapshot.docs.map(doc => doc.data()))
+            setItems(querySnapshot.docs.map(doc => {
+                return {id: doc.id, ...doc.data()}
+            }))
         }).catch(error => {
             console.log("ERROR ",error)
         }).finally(
             () => {isLoading(false);
         });
-    },[]);*/
+    },[]);
 
     return(
         loading?<Loading/>:(

@@ -1,7 +1,6 @@
 import React, {useEffect, useState,useContext} from 'react';
 import ItemCount from './contador/ItemCount';
 import {CartContext} from '../context/context';
-import {Button} from 'reactstrap';
 import AddCartButton from './AddCartButton';
 import params from '../constants/counterParam';
 
