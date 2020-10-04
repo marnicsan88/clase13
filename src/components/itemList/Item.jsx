@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, Button} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import './css/item.css'
 
 const Item = (props) => {
+    useEffect(()=>{
+      console.log(props);
+    },[])
     return (
       <Card className={props.categoria} style={{margin:"0.5rem",height:"15rem",width:"15rem"}} id={props.id}>
         <CardBody style={{boxSizing:"borde-box"}}>

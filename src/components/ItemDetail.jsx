@@ -2,8 +2,8 @@ import React, {useEffect, useState,useContext} from 'react';
 import ItemCount from './contador/ItemCount';
 import {CartContext} from '../context/context';
 import {Button} from 'reactstrap';
+import AddCartButton from './AddCartButton';
 import params from '../constants/counterParam';
-import { NavLink } from 'react-router-dom';
 
 const ItemDetail = (props) => {
     const [cantidad,setCantidad] = useState(0)
@@ -30,11 +30,7 @@ const ItemDetail = (props) => {
                 <div>{props.item.efecto}</div>
                 <div style={{fontWeight:"bold"}}>${props.item.valor}</div>
                 <ItemCount initial={params.initial} min={params.min} max={params.max} onAdd={onAdd} />
-                <NavLink to="/">
-                    <Button onClick={agregarCarrito} color="primary" disabled={!sePuedeComprar} className="text-center" style={{width:"100%", margin:"1px"}}>
-                        Comprar {cantidad}
-                    </Button>
-                </NavLink>
+                <AddCartButton agregarCarrito={agregarCarrito} cantidad={cantidad} nombreItem={props.item.nombre} sePuedeComprar={sePuedeComprar}/>
             </div>        
         </div>
     )

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Loading from '../loading/Loading';
 import ItemList from './ItemList';
+import {Container,Row} from 'reactstrap'
 import {getFirestore} from '../../firebase';
 
 function ItemListContainer(){
@@ -18,7 +19,7 @@ function ItemListContainer(){
         })
     },[])
 
-    /* CONSUMIENDO FIREBASE
+    /*CONSUMIENDO FIREBASE
     useEffect(() => {
         const db = getFirestore();
         const itemCollection = db.collection("spells")
@@ -35,7 +36,13 @@ function ItemListContainer(){
     },[]);*/
 
     return(
-        loading?<Loading/>:<ItemList data={items}/>
+        loading?<Loading/>:(
+            <Container fluid={true}>
+                <Row xs="1" sm="2" md="3" lg="4" className="justify-content-md-center" style={{textAlign:"center"}}>
+                    <ItemList data={items}/>
+                </Row>
+            </Container>    
+        )
     )
 }
 
