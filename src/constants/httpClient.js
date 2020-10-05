@@ -10,7 +10,7 @@ const getHechizo = (idItem) => {
     .then(res => res.json())
 }
 
-export default{
+export{
     getHechizos,
-    getHechizo,
+    getHechizo
 }

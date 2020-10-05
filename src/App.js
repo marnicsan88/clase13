@@ -3,8 +3,9 @@ import {BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavPpal from './components/navBar/NavBar';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
+import Search from './pages/Search';
 import ItemDetailContainer from './pages/ItemDetailContainer';
-import {CartProvider} from './context/context';
+import {CartProvider} from './context/cartContext';
 
 import './App.css';
 
@@ -17,6 +18,9 @@ export default function App() {
           <Switch>
             <Route exact path="/">
               <Home greeting="Bienvenido" nombre="Tincho"/>
+            </Route>
+            <Route path="/search">
+              <Search />
             </Route>
             <Route exact path="/item/:idItem">
               <ItemDetailContainer />

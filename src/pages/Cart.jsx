@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import CartDetail from "../components/cart/CartDetail"
 import ErrorMsg from "../components/ErrorMsg"
-import {CartContext} from "../context/context"
+import {CartContext} from "../context/cartContext"
 
 
 export default function Cart(){

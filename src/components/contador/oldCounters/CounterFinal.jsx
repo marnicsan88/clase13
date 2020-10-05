@@ -5,7 +5,6 @@ import CounterInput from './CounterInput';
 
 const CounterFinal = (props) =>{
     const [contador,updateContador] = useState(0)
-    //const [contador,updateContador] = useState(props.initial)
 
     const sumar = () => {
         let cont = contador;

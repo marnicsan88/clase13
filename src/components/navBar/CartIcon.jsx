@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {CartContext} from '../../context/context'
+import {CartContext} from '../../context/cartContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 

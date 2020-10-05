@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import CartItem from "./CartItem"
-import {CartContext} from "../../context/context"
+import {CartContext} from "../../context/cartContext"
 import {Container, Row, Col, Button} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 

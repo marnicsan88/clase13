@@ -1,6 +1,6 @@
 import React, {useEffect, useState,useContext} from 'react';
 import ItemCount from './contador/ItemCount';
-import {CartContext} from '../context/context';
+import {CartContext} from '../context/cartContext';
 import AddCartButton from './AddCartButton';
 import params from '../constants/counterParam';
 
@@ -10,8 +10,8 @@ const ItemDetail = (props) => {
     const {setCart} = useContext(CartContext);
     
     useEffect(() =>{
-        (cantidad >= params.min && cantidad <= params.max) ? setSePuedeComprar(true) : setSePuedeComprar(false)
-    },[cantidad])
+        (cantidad >= params.min && cantidad <= props.item.stock) ? setSePuedeComprar(true) : setSePuedeComprar(false)
+    },[cantidad,props.item.stock])
 
     const onAdd = (count) => {
         setCantidad(count);
@@ -28,7 +28,7 @@ const ItemDetail = (props) => {
                 <h1>{props.item.nombre}</h1>
                 <div>{props.item.efecto}</div>
                 <div style={{fontWeight:"bold"}}>${props.item.valor}</div>
-                <ItemCount initial={params.initial} min={params.min} max={params.max} onAdd={onAdd} />
+                <ItemCount initial={params.initial} min={params.min} max={props.item.stock} onAdd={onAdd} />
                 <AddCartButton agregarCarrito={agregarCarrito} cantidad={cantidad} nombreItem={props.item.nombre} sePuedeComprar={sePuedeComprar}/>
             </div>        
         </div>

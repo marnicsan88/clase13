@@ -11,20 +11,6 @@ const ItemDetailContainer = () => {
     const [item,setItem] = useState(false);
     const [loading,setLoading] = useState(true);
 
-    /*useEffect(() => {
-        fetch(`https://5f6a9065d808b90016bc1301.mockapi.io/spellmarketapi/v1/spell/${idItem}`)
-        .then(res => {
-            if(res.ok)
-                return res.json();
-            else
-                throw new Error("No se encontró Spell")
-        }).then(res => {
-            setItem(res);
-        }).catch(err =>{
-            console.log(err);
-        }).finally(() => setLoading(false))
-    },[idItem])*/
-
     /*CONSUMIENDO FIREBASE*/
     useEffect(() => {
         const db = getFirestore();
@@ -40,7 +26,7 @@ const ItemDetailContainer = () => {
         }).finally(() => {
             setLoading(false);
         })
-    },[]);
+    },[idItem]);
 
     return(
         loading ? <Loading /> : (
