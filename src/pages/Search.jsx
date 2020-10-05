@@ -26,11 +26,11 @@ export default function Search(){
         const itemCollection = db.collection("spells")
         let itemQuery = itemCollection;
         if(catFilter && catFilter !== "-1" && itemName){
-            itemQuery = itemQuery.where("idCategoria","==", getCategoryRef(catFilter)).where("nombre","==", itemName);
+            itemQuery = itemQuery.where("idCategoria","==", getCategoryRef(catFilter)).where("nombre","==", itemName)
         }else if(catFilter && catFilter !== "-1" && !itemName){
             itemQuery = itemQuery.where("idCategoria","==", getCategoryRef(catFilter))
         }else if(itemName)
-            itemQuery = itemQuery.where("nombre","==", itemName);
+            itemQuery = itemQuery.where("nombre","==", itemName)
         itemQuery.get().then((querySnapshot) => {
             if(!querySnapshot.size){
                 console.log("No Data");
@@ -43,7 +43,7 @@ export default function Search(){
         }).finally(
             () => {isLoading(false);
         });
-    },[catName,itemName]);
+    },[catFilter,itemName]);
 
 
     return(

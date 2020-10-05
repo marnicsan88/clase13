@@ -18,7 +18,7 @@ export default function CartItem(props){
                                 <div>Cant.: {props.cantidad}</div>
                             </Col>
                             <Col className="col-md-4">
-                                <div style={{fontWeight:"bolder"}}>${props.item.valor}</div>
+                                <div style={{fontWeight:"bolder"}}>${props.item.valor.toFixed(2)}</div>
                             </Col>
                         </Row>
                     </Container>

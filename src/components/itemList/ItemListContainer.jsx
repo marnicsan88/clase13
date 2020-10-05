@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import ErrorMsg from '../ErrorMsg';
 import ItemList from './ItemList';
-import {Container,Row,Col} from 'reactstrap'
-import {getFirestore} from '../../firebase';
+import {Container,Row} from 'reactstrap'
 
 function ItemListContainer({items}){
+
     return(
         !items.length?<ErrorMsg msg="No se encontraron Items"/>:
         <Container fluid={true}>

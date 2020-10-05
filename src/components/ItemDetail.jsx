@@ -27,7 +27,7 @@ const ItemDetail = (props) => {
             <div style={{display:"flex",flexDirection:"column",justifyContent:"space-between",margin:"0.5rem",width:"20rem"}}>
                 <h1>{props.item.nombre}</h1>
                 <div>{props.item.efecto}</div>
-                <div style={{fontWeight:"bold"}}>${props.item.valor}</div>
+                <div style={{fontWeight:"bold"}}>${props.item.valor.toFixed(2)}</div>
                 <ItemCount initial={params.initial} min={params.min} max={props.item.stock} onAdd={onAdd} />
                 <AddCartButton agregarCarrito={agregarCarrito} cantidad={cantidad} nombreItem={props.item.nombre} sePuedeComprar={sePuedeComprar}/>
             </div>        

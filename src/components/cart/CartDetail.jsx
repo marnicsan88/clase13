@@ -12,7 +12,7 @@ export default function CartDetail(){
             <Container>
                 <Row xs="1" md="12" className="justify-content-md-center" style={{textAlign:"center"}}>
                     <Col className="col-md-8">
-                        {cart.map(cartItem => <CartItem item={cartItem.item} cantidad={cartItem.cantidad}/>)}
+                        {cart.map(cartItem => <CartItem key={cartItem.item.key} item={cartItem.item} cantidad={cartItem.cantidad}/>)}
                     </Col>
                     <Col className="col-md-4">
                         <div style={{paddingBottom:"1.5rem",paddingLeft:"2rem",paddingRight:"3rem",boxSizing:"border-box",border:"1px solid #a45087"}}>
