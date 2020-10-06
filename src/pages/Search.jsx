@@ -22,6 +22,7 @@ export default function Search(){
     }
 
     useEffect(() => {
+        isLoading(true);
         const db = getFirestore();
         const itemCollection = db.collection("spells")
         let itemQuery = itemCollection;
@@ -48,11 +49,11 @@ export default function Search(){
 
     return(
         <>
-            <div style={{padding:"0.5rem",paddingLeft:"2rem"}}>
-                <h2 style={{display:"inline"}}>{/([aeiou])$/g.test(catName.substring(catName.length-1))?`${catName}s`:`${catName}es`}</h2>
-                {itemName?<h3 style={{display:"inline"}}>&nbsp;para <strong>{itemName}</strong></h3>:""}
+            <div style={{marginTop:"1.5rem",marginBottom:"2rem",marginLeft:"1.5rem"}}>
+                <h1 style={{display:"inline"}}>{catName?(/([aeiou])$/g.test(catName.substring(catName.length-1))?`${catName}s`:`${catName}es`):"Resultados"}</h1>
+                {itemName?<h2 style={{display:"inline"}}>&nbsp;para <strong>{itemName}</strong></h2>:""}
             </div>
-            {loading?<Loading/>:<ItemListContainer items={items}/>}
+            {loading?<Loading msg="CARGANDO"/>:<ItemListContainer items={items}/>}
         </>
     )
 }

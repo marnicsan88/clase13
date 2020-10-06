@@ -13,6 +13,7 @@ const ItemDetailContainer = () => {
 
     /*CONSUMIENDO FIREBASE*/
     useEffect(() => {
+        setLoading(true);
         const db = getFirestore();
         const itemCollection = db.collection("spells")
         const item = itemCollection.doc(idItem);
@@ -20,7 +21,7 @@ const ItemDetailContainer = () => {
             if(!doc.exists){
                 console.log("No Data");
             }
-            setItem(doc.data())
+            setItem({id: doc.id, ...doc.data()})
         }).catch(error => {
             console.log("ERROR ",error)
         }).finally(() => {
@@ -29,7 +30,7 @@ const ItemDetailContainer = () => {
     },[idItem]);
 
     return(
-        loading ? <Loading /> : (
+        loading ? <Loading msg="CARGANDO"/> : (
             <Container fluid>
                 <Row style={{textAlign:"center"}}>
                     <Col style={{display:"flex",justifyContent:"center"}}>

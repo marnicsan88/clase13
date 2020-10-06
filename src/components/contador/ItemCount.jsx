@@ -6,6 +6,10 @@ const ItemCount = ({initial, max, min, onAdd}) =>{
     const [contador,updateContador] = useState(parseInt(initial))
 
     useEffect(()=>{
+        updateContador(initial)
+    },[initial]);
+
+    useEffect(()=>{
         onAdd(contador)
     },[contador]);
     

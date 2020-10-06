@@ -30,7 +30,7 @@ const Home = (props) => {
                 {props.greeting} <label style={{fontWeight:"bolder"}}>{props.nombre}</label>
             </div>
             <div>
-                {loading?<Loading/>:<ItemListContainer items={items}/>}
+                {loading?<Loading msg="CARGANDO"/>:<ItemListContainer items={items}/>}
             </div>
         </div>
     );
