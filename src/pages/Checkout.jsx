@@ -1,6 +1,6 @@
 import React, {useState,useEffect,useContext} from 'react';
 import CartItem from "../components/cart/CartItem"
-import BuyerForm from "../components/BuyerForm"
+import BuyerForm from "../components/buyerForm/BuyerForm"
 import Loading from "../components/loading/Loading"
 import * as firebase from 'firebase/app'
 import {getFirestore} from '../firebase';
@@ -33,7 +33,8 @@ export default function Checkout(){
     }
 
     useEffect(() => {
-        console.log(orderId);
+        if(orderId)
+            alert(`Tu nro de Orden de compra es: #${orderId}`);
     },[orderId])
 
     return(

@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorMsg from '../ErrorMsg';
+import ErrorMsg from '../msg/ErrorMsg';
 import ItemList from './ItemList';
 import {Container,Row} from 'reactstrap'
 

@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import Loading from '../components/loading/Loading';
-import ItemDetail from '../components/ItemDetail';
-import ErrorMsg from '../components/ErrorMsg';
+import ItemDetail from '../components/itemDetail/ItemDetail';
+import ErrorMsg from '../components/msg/ErrorMsg';
 import {Container, Row, Col} from 'reactstrap';
 import {useParams} from 'react-router-dom';
 import { getFirestore } from '../firebase/index'

@@ -9,7 +9,7 @@ const Home = (props) => {
 
     useEffect(() => {
         const db = getFirestore();
-        const itemCollection = db.collection("spells").orderBy("nombre")
+        const itemCollection = db.collection("spells").orderBy("nombre").limit(25)
         itemCollection.get().then((querySnapshot) => {
             if(!querySnapshot.size){
                 console.log("No Data");

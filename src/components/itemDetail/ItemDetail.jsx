@@ -1,12 +1,12 @@
 import React, {useEffect, useState,useContext} from 'react';
-import ItemCount from './contador/ItemCount';
+import ItemCount from '../contador/ItemCount';
 import AddCartButton from './AddCartButton';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom';
-import {CartContext} from '../context/cartContext';
-import params from '../constants/counterParam';
+import {CartContext} from '../../context/cartContext';
+import params from '../../constants/counterParam';
 
 const ItemDetail = (props) => {
     const [cantidad,setCantidad] = useState(params.initial)

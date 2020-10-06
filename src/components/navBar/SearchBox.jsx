@@ -27,7 +27,6 @@ const Searchbox = (props) => {
   useEffect(() => {
     let destino = "/search?";
     const catFilter = category != -1 ? `categoryId=${category}&catName=${catName}` : "";
-    console.log(catFilter)
     const namFilter = itemName ? `itemName=${itemName}` : "";
     if(!catFilter && !namFilter){
       destino = "/"
