@@ -11,9 +11,9 @@ const useQuery = () => {
 export default function Search(){
     const [items,setItems] = useState([]);
     const [loading,isLoading] = useState(true);
-    const catName = useQuery().get("catName")
-    const catFilter = useQuery().get("categoryId")
-    const itemName = useQuery().get("itemName")
+    const catName = useQuery().get("catName") || "";
+    const catFilter = useQuery().get("categoryId") || "";
+    const itemName = useQuery().get("itemName") || "";
 
     const getCategoryRef = (categoryId) => {
         const db = getFirestore();
