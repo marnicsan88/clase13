@@ -17,7 +17,7 @@ export default function CartDetail(){
                         <h2>Total</h2>
                         <div style={{textAlign:"right",marginTop:"1rem",marginBottom:"1rem"}}><h4 style={{fontWeight:"bold"}}>${calcularTotal()}</h4></div>
                         <NavLink to="/checkout">
-                            <Button color="primary" style={{width:"100%"}}>Continuar Compra</Button>
+                            <Button color="primary" style={{width:"100%"}}>Finalizar Compra</Button>
                         </NavLink>
                     </div>
                 </Col>
